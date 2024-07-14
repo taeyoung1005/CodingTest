@@ -23,31 +23,20 @@ def is_장애물(way, distance):
 
 # 공원밖이라면 True 리턴
 def is_공원밖(way, distance, park_width, park_height):
+    공원밖여부 = False
     if way == 'E':
         if dog[1] + distance >= park_width:
-            return True
-        else:
-            return False
-            # dog[1] += distance
+            공원밖여부 = True
     elif way == 'W':
         if dog[1] - distance < 0:
-            return True
-        else:
-            return False
-            # dog[1] -= distance
+            공원밖여부 = True
     elif way == 'N':
         if dog[0] - distance < 0:
-            return True
-        else:
-            return False
-            # dog[0] -= 1
+            공원밖여부 = True
     elif way == 'S':
         if dog[0] + distance >= park_height:
-            return True
-        else:
-            return False
-            # dog[0] += 1
-    return False
+            공원밖여부 = True
+    return 공원밖여부
 
 def move(way, distance, park_width, park_height):
     # 공원밖이거나 장애물이 있다면 pass

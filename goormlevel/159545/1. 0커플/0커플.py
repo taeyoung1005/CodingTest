@@ -3,8 +3,6 @@
 N = int(input())
 people = set(map(int, input().split()))
 
-pair_people = set()
-
 for i in range(len(people)//2):
 	temp = people.pop()
 	if -temp in people:

@@ -1,16 +1,16 @@
 import sys
+from collections import Counter
 
-input = sys.stdin.readline
+input = sys.stdin.read
 
-N = int(input())
-cards_dict = {}
-cards = list(map(int, input().split()))
+data = input().splitlines()
 
-for card in cards:
-    if card in cards_dict:
-        cards_dict[card] += 1
-    else:
-        cards_dict[card] = 1
+# 입력 처리
+N = int(data[0])
+cards = map(int, data[1].split())
+M = int(data[2])
+query = map(int, data[3].split())
 
-M = int(input())
-print(" ".join([str(cards_dict[i]) if i in cards_dict else '0' for i in list(map(int, input().split()))]))
+cards_count = Counter(cards)
+
+print(" ".join(str(cards_count[q]) if q in cards_count else '0' for q in query))

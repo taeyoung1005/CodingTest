@@ -1,38 +1,37 @@
 import sys
+input = sys.stdin.readline
 
 q = []
 
-N = int(sys.stdin.readline().strip())
+N = int(input().strip())
+
 
 def q_empty():
     return 1 if len(q) == 0 else 0
 
+
 def q_size():
     return len(q)
+
 
 def q_push(n):
     q.append(n)
 
+
 def q_front():
-    if q_empty():
-        return -1
-    else:
-        return q[0]
+    return -1 if q_empty() else q[0]
+
 
 def q_back():
-    if q_empty():
-        return -1
-    else:
-        return q[-1]
+    return -1 if q_empty() else q[-1]
+
 
 def q_pop():
-    if q_empty():
-        return -1
-    else:
-        return q.pop(0)
+    return -1 if q_empty() else q.pop(0)
+
 
 for _ in range(N):
-    command = sys.stdin.readline().strip()
+    command = input().strip()
     if "push" in command:
         q_push(int(command.split()[1]))
     elif command == "front":

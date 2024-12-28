@@ -4,20 +4,16 @@ import sys
 input = sys.stdin.readline
 
 N, M = map(int, input().split())
+graph = [input().strip() for _ in range(N)]
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
-graph = []
 for i in range(N):
-    temp = []
-    info = input().strip()
-    for j in range(len(info)):
-        if info[j] == 'I':
-            s_x = j
-            s_y = i
-        temp.append(info[j])
-    graph.append(temp)
+    for j in range(M):
+        if graph[i][j] == 'I':
+            s_x, s_y = j, i
+            break
 
 
 visited = [[0]*M for _ in range(N)]

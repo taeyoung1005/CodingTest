@@ -1,17 +1,14 @@
 import sys
 
-input = sys.stdin.readline
+N = int(sys.stdin.readline())
 
-N = int(input())
-
-start = 666
+num = 0
 cnt = 0
 while True:
-    if cnt == N:
-        print(start-1)
-        break
-
-    if '666' in str(start):
+    num += 1
+    if '666' in str(num):
         cnt += 1
     
-    start += 1
+    if cnt == N:
+        print(num)
+        break

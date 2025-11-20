@@ -1,9 +1,7 @@
 import sys
 from math import factorial
 
-input = sys.stdin.readline
-
-N = int(input().rstrip())
+N = int(sys.stdin.readline())
 
 cnt = 0
 for i in reversed(str(factorial(N))):

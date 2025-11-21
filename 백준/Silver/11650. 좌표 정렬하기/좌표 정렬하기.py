@@ -1,8 +1,8 @@
 import sys
 
-N = int(sys.stdin.readline().strip())
+N = int(sys.stdin.readline())
 
-xy = [list(map(int, sys.stdin.readline().split())) for i in range(N)]
+result = sorted([list(map(int, sys.stdin.readline().split())) for _ in range(N)], key=lambda x: (x[0], x[1]))
 
-for x, y in sorted(xy, key=lambda x : (x[0], x[1])):
-    print(x, y)
+for i in result:
+    print(f'{i[0]} {i[1]}')

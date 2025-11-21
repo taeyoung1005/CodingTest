@@ -1,11 +1,8 @@
 import sys
 
-input = sys.stdin.readline
+n = sys.stdin.readline()
+a = set(sys.stdin.readline().split())
+m = sys.stdin.readline()
+result = ['1' if i in a else '0' for i in sys.stdin.readline().split()]
 
-N = input()
-N_list = set(map(int, input().split()))
-
-
-M = input()
-
-print("\n".join(['1' if i in N_list else '0' for i in list(map(int, input().split()))]))
+print("\n".join(result))
